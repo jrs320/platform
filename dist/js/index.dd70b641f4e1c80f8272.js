@@ -1,0 +1,1 @@
+webpackJsonp([0],[function(e,n,t){(function(e){t(2);var n=t(4),i=t(5),a=t(6),c=document.createElement("div");c.innerHTML="<h1>Hello Index "+i.getA()+a.getB()+"</h1>",c.appendChild(n.generateText("title index")),e("#e").append(c)}).call(n,t(1))},,function(e,n){}]);
