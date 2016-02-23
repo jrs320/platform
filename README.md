@@ -1,8 +1,9 @@
 # platform
 
-The project demo of building with webpack
+The project demo of building with webpack.
+Record the problems and solution.
 
-1.**about commonsChunkPlugin test**
+1.**commonsChunkPlugin**
 
 There are multiple CommonsChunkPlugins used when Spliting code into more
 than one common chunks, at this time, the order of commonsChunkPlugins
@@ -95,3 +96,35 @@ module.exports = {
 };
 
 ```
+2.**webpack.optimize.UglifyJsPlugin**
+
+set up `new webpack.optimize.UglifyJsPlugin({minimize: true})` in configuration file, at this time, running `webpack -p` command, there are errors in compressed js file (i tested compressing jquery), but only use one of this two methods, can work well! 
+
+3.**use jquery in ie8**
+
+`npm install jquery`, perform this command, project cann't work in ie8, i know, because the lastest jquery version don't support ie8.
+However, install jquery1.7.x, 1.8.x, 1.9.x, 1.10.x, 1.12.x,those versions i tried, there are alwasy certain errors disapeared in ie8,
+at alst, perform `npm install jquery@1.11.1`,it works well,awesome...!
+
+4.**image-webpack-loader**
+
+```javascript
+    output : {
+        path : DIST_PATH,
+        publicPath : '../',
+        filename : 'js/[name].[hash].js'
+    },
+    module: {
+        loaders: [
+            {
+                test: /.*\.(gif|png|jpe?g|svg)$/i,
+                loaders: [
+                    'file?hash=sha512&digest=hex&name=images/[hash].[ext]',
+                    'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
+                ]
+            }
+        ]
+    }
+```
+`publicPath` must be setted in `output`, otherwise，compressed image file path in html is not correct. the reason is ...
+
