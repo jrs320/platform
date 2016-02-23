@@ -37,19 +37,15 @@ module.exports = {
     },
     plugins : [
         new webpack.optimize.CommonsChunkPlugin({
-            name : 'vendors',
-            filename : 'js/vendors.[hash].js',
-            minChunks: Infinity
-        }),
-        new webpack.optimize.CommonsChunkPlugin({
             name : 'commons',
             chunks : ['login','index'],
             filename : 'js/commons.[hash].js'
         }),
-        //new webpack.optimize.CommonsChunkPlugin({
-        //    name : 'commons',
-        //    filename : 'js/commons.[hash].js'
-        //}),
+        new webpack.optimize.CommonsChunkPlugin({
+            name : 'vendors',
+            filename : 'js/vendors.[hash].js',
+            minChunks: Infinity
+        }),
         new HtmlWebpackPlugin({
             title : "login",
             template : path.resolve(VIEWS_PATH, 'login.html'),
