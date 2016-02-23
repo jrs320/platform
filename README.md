@@ -103,7 +103,7 @@ set up `new webpack.optimize.UglifyJsPlugin({minimize: true})` in configuration 
 3.**use jquery in ie8**
 
 `npm install jquery`, perform this command, project cann't work in ie8, i know, because the lastest jquery version don't support ie8.
-However, install jquery1.7.x, 1.8.x, 1.9.x, 1.10.x, 1.12.x,those versions i tried, there are alwasy certain errors disapeared in ie8,
+However, install jquery1.7.x, 1.8.x, 1.9.x, 1.10.x, 1.12.x,those versions i tried, there are always certain errors disapeared in ie8,
 at alst, perform `npm install jquery@1.11.1`,it works well,awesome...!
 
 4.**image-webpack-loader**
