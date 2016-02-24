@@ -1,4 +1,4 @@
-# platform
+# Project for testing `webpack`
 
 The project demo of building with webpack.
 Record the problems and solution.
