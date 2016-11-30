@@ -1,7 +1,7 @@
 # Project for testing `webpack`
 
 The project demo of building with webpack.
-Record the problems and solution.
+Now, i shared a little experience and Solutions here in the use of webpack.
 
 1.**commonsChunkPlugin**
 
@@ -126,5 +126,5 @@ at alst, perform `npm install jquery@1.11.1`,it works well,awesome...!
         ]
     }
 ```
-`publicPath` must be setted in `output`, otherwise，compressed image file path in html is not correct. the reason is ...
+`publicPath` must be setted in `output`, otherwise，compressed image file path in html is not correct. the reason is ...,ye
 
